@@ -1,0 +1,85 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+
+    <script>
+        function setup() {
+            createCanvas(800, 800);
+
+            background(0, 150, 150);
+
+            //body
+            fill(0)
+            ellipse(200, 300, 300, 300);//head
+            ellipse(200, 500, 300, 300);
+            fill(252);
+            ellipse(200, 550, 235, 150);//belly
+            fill(0);
+            textSize(20);
+            text('x', 200, 600);
+
+            //face
+            fill(252);
+            ellipse(120, 255, 60, 60);//Left eye
+            ellipse(270, 255, 60, 60);
+            ellipse(200, 350, 85, 10);//mouth
+            fill(252, 150, 252);//light pink
+            ellipse(200, 352, 65, 5);//tounge
+            fill(0);
+            ellipse(120, 255, 40, 40);//inside eye
+            ellipse(270, 255, 40, 40);
+            
+            //hat
+            fill(254, 254, 0);//yellow
+            strokeWeight(10);
+            rect(150, 5, 100, 180);
+            rect(100, 80, 200, 100);
+            
+
+            //hands
+            strokeWeight(3);
+            fill(0);
+            ellipse(300, 600, 50, 50);//feet
+            ellipse(100, 600, 50, 50);
+            ellipse(60, 450, 50, 50);//hands
+            ellipse(345, 450, 50, 50);
+
+            //balloon
+            fill(0);
+            point(375, 150);
+            point(325, 125);
+            stroke(0, 150, 254);//light blue
+            line(375, 220, 370, 450);
+            fill(0, 150, 254, 100);//transparent
+            ellipse(380, 120, 200, 200);
+            
+
+
+
+
+        }
+
+        function draw() {
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/abimaelj5274/p5js/blob/master/zoog.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
