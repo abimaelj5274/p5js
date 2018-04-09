@@ -1,0 +1,87 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+
+    <script>
+        function setup() {
+            createCanvas(800, 600);
+            background(0);            
+
+
+
+        }
+
+        function draw() {
+                        
+
+
+            ellipse(0, 300, 200, 200);
+            noFill();
+            ellipse(50,270,50,40)
+            noStroke();
+            triangle(50, 300, 100, 250, 100, 350);
+            fill(random(255), random(255), random(255));
+            
+            ellipse(0, 600, 100, 100)
+            ellipse(100, 600, 100, 100)
+            ellipse(200, 600, 100, 100)
+            ellipse(300, 600, 100, 100)
+            ellipse(400, 600, 100, 100)
+            ellipse(500, 600, 100, 100)
+            ellipse(600, 600, 100, 100)
+            ellipse(700, 600, 100, 100)
+            ellipse(800, 600, 100, 100)
+          
+            
+
+
+
+        }
+        function mouseMoved(){
+            stroke(random(255), random(255), random(255), (50));
+            strokeWeight(4)
+            line(mouseX, mouseY, 100, 300);
+            
+            var size = random(0,50 );
+            fill(random(255), random(255), random(255));
+            ellipse(mouseX,mouseY, 25, 25);
+            ellipse(mouseX + random(-100,100),mouseY + random(-100,100), size ,size)
+            
+        }
+        
+        function keyPressed() {
+            noStroke();
+            background(random(255), random(255), random(255));
+
+        }
+        function mouseDragged() {
+            fill(random(255),random(255),random(255),50)
+            ellipse(mouseX, mouseY,50,50)
+            
+            
+
+
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/abimaelj5274/p5js/blob/master/interaction-project.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
