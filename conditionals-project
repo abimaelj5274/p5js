@@ -1,0 +1,60 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.5.3/p5.js"></script>
+
+    <script>
+        function setup() {
+            createCanvas(600, 600);
+
+        }
+
+        function draw() {
+            background(116, 170, 200); //sets Bckground
+            if (mouseX > 200 && mouseX < 400) {
+                fill(random(255), random(255), random(255));
+                ellipse(mouseX, mouseY, 100, 100); //Face
+                fill(0);
+                ellipse(mouseX - 20, mouseY - 20, 15, 15); //happy face
+                ellipse(mouseX + 20, mouseY - 20, 15, 15);
+                arc(mouseX - 5, mouseY + 10, 50, 50, 50, 10, PI + QUARTER_PI, CHORD);//arc
+            }
+          
+            else {
+                (mouseX > 200 || mouseX > 400);
+                fill(100, 20, 180);
+                ellipse(mouseX, mouseY, 100, 100);//other ellipse around the middle circle
+                ellipse(mouseX - 50, mouseY - 50, 100, 100);
+                ellipse(mouseX + 50, mouseY + 50, 100, 100);
+            }
+            if (mouseX > 250 && keyIsPressed == true) {
+                rect(mouseX, mouseY, 100, 100);//when key C is pressed 2/3 of screen the Rectangles appear
+                rect(mouseX - 100, mouseY - 100,100 ,100);
+            }
+            if (key == "c" || mouseY > 250) { //
+                fill(random(255),random(255),random(255));//middle circle changes color in bottom section
+                ellipse(mouseX, mouseY, 100, 100);
+            }
+
+
+        }
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/abimaelj5274/p5js/blob/master/conditionals-project.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
