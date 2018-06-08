@@ -1,1 +1,104 @@
-d
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>Pong</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.4.13/p5.js"></script>
+    <script>
+        var ballX;
+        var ballY;
+        var ballSpeedX = 10;
+        var ballSpeedY = 10;
+        var paddleHeight = 30;
+        var score = 0;
+        var lives = 3
+        var paddleWidth = 200
+
+        function setup() {
+            createCanvas(800, 600);
+            noCursor();
+            ballX = random(width); /This will set the ball any where between 0 to 800
+            ballY = random(height / 2);/The balll will be below 300 Y
+        }
+
+        function draw() {
+            background(0);/ All the functions will be drawn and it makes it easier to red
+            moveBall();
+            checkCollide();
+            drawPaddle();
+            drawBall();/
+            
+            textSize(40);/the text size for both Lives and score will indicate the player how they are doing 
+            fill("white");
+            text("lives:" + lives, 680, 40);
+            text("score: " + score, 30, 40);/
+            
+            paddleWidth = constrain(paddleWidth,50,200)//paddle will not shrink when it hits width 50
+        }
+
+        function moveBall() {
+            ballX = ballX + ballSpeedX;
+            ballY = ballY + ballSpeedY;
+
+            console.log("ballSpeedX: " + ballSpeedX +
+                ", ballSpeedY: " + ballSpeedY);
+        }
+
+        function checkCollide() {
+            if (ballX < 0 || ballX > width) {//checks the left side wall
+                ballSpeedX = ballSpeedX * -1;
+
+            }
+            if (ballY < 0) {//ball bounces back 
+                ballSpeedY = ballSpeedY * -1;
+            }
+            if (ballY > height - paddleHeight); {//when ball hits paddle it will bounce back
+                if (ballX > mouseX && ballX < mouseX + 200); {
+                    ballSpeedY = ballSpeedY * -1.05;
+                    
+                    score = 1 + score;/Everytime ball hits paddle this will happen
+                    paddleWidth-=10;/
+
+                }
+                else {
+                    lives -= 1//Lives will reduce if ball does not hit paddle 
+                    ballX = random(width);
+                    ballY = random(height / 2);
+                }
+            }
+
+            if (lives == 0); {//checks for lives if lives is 0 then game is over
+                text("GAME OVER!", width / 2, height / 2);
+                noLoop();
+            }
+        }
+
+        function drawBall() {//Ball is made here to teach code and put in function draw
+            noStroke();
+            fill(random(255), random(255), random(255));
+            ellipse(ballX, ballY, 20, 20);
+        }
+
+        function drawPaddle() {//paddle drawn to teach code and put inside function draw
+            strokeWeight(4);
+            rect(mouseX, height - paddleHeight - 4, paddleWidth, paddleHeight);
+        }
+    </script>
+</head>
+
+<body>
+<form><input TYPE="button" onClick="history.go(0)" value="Reset"></form>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/abimaelj5274/p5js/blob/master/pong.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
